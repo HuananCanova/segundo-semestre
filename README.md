@@ -1,6 +1,10 @@
-# Segundo semestre - :books:
+# Segundo semestre - :books:;
 
-Atividades do segundo semestre UFSM
+Huanan Augusto Canova;
 
-- Data Structure - Topics
-  - 
+Atividades do segundo semestre UFSM;
+
+- Data Structure;
+- Database;
+- Object-oriented programming;
+- Web design;
