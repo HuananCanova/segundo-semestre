@@ -1,2 +1,6 @@
-# segundo-semestre
-Atividades segundo semestre
+# Segundo semestre - :books:
+
+Atividades do segundo semestre UFSM
+
+- Data Structure - Topics
+  - 
