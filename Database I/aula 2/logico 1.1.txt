@@ -1,0 +1,6 @@
+CURSO(codcurso*, nomecurso, data, codunidade)
+	codunidade referencia UNIDADE
+UNIDADE(codunidade*, nomeunidade)
+
+ALUNO(codaluno*, nomealuno, email, telefone, codcurso)
+	codcurso referencia CURSO

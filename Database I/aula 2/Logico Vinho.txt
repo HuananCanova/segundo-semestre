@@ -1,0 +1,10 @@
+REVENDEDOR(codrev*, nomerev, telerev)
+
+VENDE(datavenda*, codvinho*, codrev*, preco)
+	codvinho referencia VINHO
+	codrev referencia REVENDEDOR
+
+VINHO(codvinho*, nomvinho, codveni)
+	codveni referencia VINÍCOLAS
+
+VINÍCOLAS(codveni*, nomeveni, anofund)

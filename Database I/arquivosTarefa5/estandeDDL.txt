@@ -1,0 +1,49 @@
+
+CREATE TABLE estande (
+    codest integer NOT NULL,
+    nomest character varying(100),
+    val_aluguel numeric(12,2),
+    codfiscal integer
+);
+
+CREATE TABLE estande_produto (
+    codprod integer NOT NULL,
+    codest integer NOT NULL,
+    val_produto_estande numeric(12,2)
+);
+
+CREATE TABLE fiscal (
+    codfiscal integer NOT NULL,
+    nomfiscal character varying(50),
+    salario numeric(12,2)
+);
+
+
+CREATE TABLE produto (
+    codprod integer NOT NULL,
+    nomprod character varying(50)
+);
+
+
+
+ALTER TABLE ONLY estande
+    ADD CONSTRAINT estande_pkey PRIMARY KEY (codest);
+
+ALTER TABLE ONLY estande_produto
+    ADD CONSTRAINT estande_produto_pkey PRIMARY KEY (codprod, codest);
+
+ALTER TABLE ONLY fiscal
+    ADD CONSTRAINT fiscal_pkey PRIMARY KEY (codfiscal);
+
+ALTER TABLE ONLY produto
+    ADD CONSTRAINT produto_pkey PRIMARY KEY (codprod);
+
+ALTER TABLE ONLY estande
+    ADD CONSTRAINT estande_codfiscal_fkey FOREIGN KEY (codfiscal) REFERENCES fiscal(codfiscal);
+
+ALTER TABLE ONLY estande_produto
+    ADD CONSTRAINT estande_produto_codest_fkey FOREIGN KEY (codest) REFERENCES estande(codest);
+
+ALTER TABLE ONLY estande_produto
+    ADD CONSTRAINT estande_produto_codprod_fkey FOREIGN KEY (codprod) REFERENCES produto(codprod);
+

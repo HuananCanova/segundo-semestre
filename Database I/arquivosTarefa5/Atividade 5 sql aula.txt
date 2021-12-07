@@ -1,0 +1,40 @@
+SELECT * FROM restaurante;
+SELECT * FROM cidade;
+SELECT * FROM especialidade;
+SELECT * FROM restaurante_especialidade;
+
+SELECT nomres FROM restaurante;
+
+
+SELECT nomres, nomcid FROM restaurante, cidade
+	WHERE restaurante.codcid = cidade.codcid
+	AND nomcid = 'Herval';
+	
+	
+SELECT nomres, nomesp
+FROM restaurante, restaurante_especialidade, especialidade
+WHERE especialidade.codesp = restaurante_especialidade.codesp
+AND restaurante_especialidade.codres = restaurante.codres
+	
+
+SELECT nomres, nomesp, nomcid
+FROM restaurante, restaurante_especialidade, especialidade, cidade
+WHERE especialidade.codesp = restaurante_especialidade.codesp
+AND restaurante_especialidade.codres = restaurante.codres
+AND cidade.codcid = restaurante.codcid;
+
+
+	
+SELECT nomres, nomesp 
+FROM restaurante, restaurante_especialidade, especialidade
+WHERE especialidade.codesp = restaurante_especialidade.codesp
+AND restaurante_especialidade.codres = restaurante.codres
+AND especialidade.nomesp = 'Cozinha Italiana'
+	
+	
+SELECT COUNT(*)FROM restaurante;
+
+SELECT COUNT(*)FROM restaurante, restaurante_especialidade, especialidade
+WHERE especialidade.codesp = restaurante_especialidade.codesp
+AND restaurante_especialidade.codres = restaurante.codres
+AND nomesp = 'Cozinha Italiana';

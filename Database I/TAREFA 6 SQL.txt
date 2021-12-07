@@ -1,0 +1,20 @@
+A) SELECT nompropri, nomeditora 
+FROM proprietario, editora
+WHERE proprietario.codpropri = editora.codpropri;
+
+B) SELECT nomassinante, nomrev 
+FROM assinante, revista, assina
+WHERE revista.codrev = assina.codrev
+AND assinante.codassinante = assina.codassinante;
+
+C) SELECT count(*)
+FROM revista, editora
+WHERE revista.codeditora = editora.codeditora
+AND nomeditora = 'BLOCH';
+
+D) SELECT nomrev
+FROM revista, editora, tipo
+WHERE revista.codeditora = editora.codeditora
+AND revista.codtipo = tipo.codtipo
+AND nomeditora = 'Abril'
+AND nomtipo = 'Quadrinhos';

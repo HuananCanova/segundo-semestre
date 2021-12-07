@@ -1,0 +1,55 @@
+INSERT INTO estande (codest, nomest, val_aluguel, codfiscal)
+	VALUES (001, 'Estande da Princesa', 0, 003);
+INSERT INTO estande (codest, nomest, val_aluguel, codfiscal)
+	VALUES (002, 'Estande do Rei', 0, 002);
+INSERT INTO estande (codest, nomest, val_aluguel, codfiscal)
+	VALUES (003, 'Estande do Doce', 0, 002);
+	
+INSERT INTO fiscal (codfiscal, nomfiscal, salario)
+	VALUES (002, 'Beltrano de Tal', 7.000);
+INSERT INTO fiscal (codfiscal, nomfiscal, salario)
+	VALUES (003, 'Fulano de Tal', 4.000);
+
+INSERT INTO produto (codprod, nomprod)
+	VALUES (002, 'Brigadeiro');
+INSERT INTO produto (codprod, nomprod)
+	VALUES (003, 'Camfeu');
+INSERT INTO produto (codprod, nomprod)
+	VALUES (007, 'Pastel de Santa Clara');
+
+INSERT INTO estande_produto (codprod, codest, val_produto_estande)
+	VALUES(003, 003, 6.50)
+
+
+
+/*Dados fiscais*/
+SELECT * FROM fiscal;
+
+/*Numeros de fiscais*/
+
+SELECT codfiscal FROM fiscal;
+
+/*Numeros de fiscais*/
+
+SELECT COUNT(*) FROM fiscal;
+
+/*MÉDIA*/
+
+SELECT AVG(salario) FROM fiscal;
+
+SELECT nomfiscal FROM fiscal 
+	ORDER BY salario;
+	
+SELECT nomfiscal, nomest FROM fiscal, estande
+	WHERE fiscal.codfiscal = estande.codfiscal;
+
+SELECT nomest, nomprod, val_produto_estande 
+	FROM estande, produto, estande_produto
+		WHERE estande_produto.codprod = produto.codprod 
+		AND estande.codest = estande_produto.codest;
+	
+
+
+
+
+

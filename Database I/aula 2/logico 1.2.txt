@@ -1,0 +1,15 @@
+- Lógico 1.2 -
+
+AGENCIA (codag*, nomeag, tel, endereco, codcid)
+	codcid referencia CIDADE
+
+CIDADE (codcid*, nomcid, estado, numhabitantes)
+
+CONTA (numconta, saldo, codag)
+	codag referencia AGENCIA
+
+CLIENTE (codcli*, nomecli, email, tel, enderco, datanasci)
+
+CONTA_CLIENTE (numconta*, codcli*)
+	numconta referencia CONTA
+	codcli referencia CLIENTE
